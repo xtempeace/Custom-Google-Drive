@@ -1,0 +1,390 @@
+
+#header{
+  border:1px black solid;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#header button    /*Button is selected*/
+{
+  padding:20px;
+  /* margin-left:10px; */
+  margin-right:10px;
+  cursor:pointer;  /*button pae cursor lae jayae toh Hand bana hua ayae*/
+  border-radius: 50px;
+
+  background-color: rgb(166, 173, 173);
+  color: aliceblue;
+  font-weight: 600;
+  border-color: rgb(212, 67, 67);
+  border-width: 2px;
+}
+
+#header button:hover
+{
+  background-color: aquamarine;
+  transform: scale(1.1);
+  color:black;
+}
+
+#breadcrumb{
+  border:1px black solid;
+  margin: 10px;
+  display: flex;
+}
+
+#breadcrumb a{
+  background-color: tomato;
+  padding:10px;
+  border-right: 3px solid black;
+}
+
+#breadcrumb a:hover{
+  background-color: rgb(16, 201, 201);
+  color:white;
+  text-decoration: underline blue 1px; /*hover karnae pae underline ho jaega*/
+  
+}
+
+
+#container{
+  border:3px rgba(7, 150, 206, 0.781) solid;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+}
+
+.folder{
+  background-color: rgba(24, 156, 12, 0.952);
+  height:120px;
+  width:150px;
+  border: brown 2px solid;
+  border-radius: 9px;
+  padding:3px;
+  margin-right: 4px;
+}
+.folder div[purpose=name]{
+  margin-top: 75px;
+}
+
+.folder [action]
+{
+  /* text-decoration: underline; */
+  cursor: pointer;
+  margin-left: 6px;
+  color:rgb(255, 255, 255);
+}
+
+.folder [action]:hover
+{
+  text-decoration: underline;
+  cursor: pointer;
+  color:rgb(5, 53, 212)
+}
+
+
+/*text-file kae liyae css set */
+
+.text-file{
+  background-color: rgba(235, 235, 235, 0.295);
+  height:120px;
+  width:150px;
+  border: rgb(114, 196, 39) 2px solid;
+  border-radius: 9px;
+  padding:3px;
+  margin-right: 4px;
+}
+.text-file div[purpose=name]{
+  margin-top: 75px;
+}
+
+.text-file [action]
+{
+  /* text-decoration: underline; */
+  cursor: pointer;
+  margin-left: 6px;
+  color:rgba(252, 6, 6, 0.925);
+}
+
+.text-file [action]:hover
+{
+  text-decoration: underline;
+  cursor: pointer;
+  color:rgb(5, 53, 212)
+}
+
+
+#app{
+  border:1px black solid;
+  margin: 10px;/*margin ki wajah sae divcontainer sae and left right mae 10 px ka gap hai*/
+}
+
+#app-title-bar{
+  display: flex; /*content side by side aa jayae*/
+  background-color: rgb(19, 205, 230);
+  height:50px;
+}
+
+#app-title{
+  width:95%;/*taki (mini,max,close) right side mae aa jayae*/
+  text-align: center;
+  /* border-right: 4px solid red; */
+}
+
+#app-menu-bar{
+  display: flex;
+  background-color:teal;
+  height:40px;
+}
+
+#app-body{
+  display: flex;
+  background-color: springgreen;
+  height:500px;
+}
+
+#win-actions{
+  padding:9px;
+  display: flex;
+  text-align:right;
+  /* text-align:center; */
+}
+
+#win-actions #clo .material-icons{
+  border:3px red solid;
+  margin:2px;
+  /* cursor: pointer; */
+}
+#win-actions #clo .material-icons:hover{
+  background-color: red;
+  color: aliceblue;
+  margin:2px;
+  cursor: pointer;
+}
+
+#win-actions #full .material-icons{
+  border:3px rgb(26, 168, 22) solid;
+  margin:2px;
+}
+#win-actions #full .material-icons:hover{
+  background-color: rgb(26, 168, 22);
+  margin:2px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+#win-actions #mini .material-icons{
+  border:3px rgb(216, 238, 15) solid;
+  margin:2px;
+}
+#win-actions #mini .material-icons:hover{
+  background-color: rgb(216, 238, 15);
+  margin:2px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+
+
+.notepad-body{
+  height:100%;
+  width:100%;
+}
+
+.notepad-body textarea{
+  height:100%;
+  width:100%;
+}
+
+
+
+
+.notepad-menu{
+  border:1px solid white;
+  width:100%;
+  padding:5px;
+}
+
+.notepad-menu *       /*.notepad-menu * => It means .notepad-menu mae jo jo hai sabhi pae*/
+{
+  margin:0px 7px;  /*top,botom mae 0px,and left right mae 5px*/
+  cursor: pointer;
+  border:2px solid white;
+}
+
+.notepad-menu span{
+  vertical-align: bottom;
+  /* background-color:transparent; */
+
+  border-radius: 5px;
+}
+
+.notepad-menu span:hover{
+  vertical-align: bottom;
+  background-color: black;
+  color:white;
+}
+
+.notepad-menu [pressed=true] /*jab B,I,U Button pae click kiya jayae for its state of activation,toh yae sab changeg B,I,U mae dekhae*/
+{
+  border:2px solid black;
+  background-color: white;
+  color:teal;
+}
+
+.notepad-menu input[type=color]{
+  width:30px;
+}
+
+a[purpose=download]
+{ 
+  display: none;  /*esasae page pae dekhaega nahi,par yae  HTML code mae available hai,jo ki template ki wajah sae runtime pae add hoga*/
+}
+  
+.notepad-menu input[action=upload]/*new3*/
+{
+  display: none;
+}
+
+
+
+/* new13 ,textFile ka css copy kar diyae hai yaha pae*/
+.album{
+  background-color: rgba(201, 125, 224, 0.507);
+  height:120px;
+  width:150px;
+  border: rgb(114, 196, 39) 2px solid;
+  border-radius: 9px;
+  padding:3px;
+  margin-right: 4px;
+}
+.album div[purpose=name]{
+  margin-top: 75px;
+}
+
+.album [action]
+{
+  /* text-decoration: underline; */
+  cursor: pointer;
+  margin-left: 6px;
+  color:rgba(252, 6, 6, 0.925);
+}
+
+.album [action]:hover
+{
+  text-decoration: underline;
+  cursor: pointer;
+  color:rgb(5, 53, 212)
+}
+
+/* new13 */
+
+/* new22 */
+.album-menu{
+  border:1px solid white;
+  width:100%;
+  padding:5px;
+}
+
+.album-menu *       /*.notepad-menu * => It means .notepad-menu mae jo jo hai sabhi pae*/
+{
+  margin:0px 7px;  /*top,botom mae 0px,and left right mae 5px*/
+  cursor: pointer;
+  border:2px solid white;
+}
+
+.album-menu span{
+  vertical-align: bottom;
+  /* background-color:transparent; */
+
+  border-radius: 5px;
+}
+
+.album-menu span:hover{
+  vertical-align: bottom;
+  background-color: black;
+  color:white;
+}
+/* new22 */
+
+/* new24 */
+.album-body{
+  height:100%;
+  width:100%;
+  padding:5px;
+}
+
+.picture-view .picture-main{
+  margin-left: 550px;
+}
+
+.material-icons [action="left"]{
+  margin-left: 250px;;
+}
+
+.picture-list{
+  border:1px solid black;
+  height:105px;
+  margin: 5px;
+  padding:1px;
+  display:flex;
+}
+
+/* new26 */
+.picture-list img{
+  height:90px;
+  margin: 5px;
+  border:2px solid rgb(255, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.picture-list img:hover{
+  transform: scale(1.06);
+  border:3px solid rgb(0, 219, 248);
+}
+
+.picture-list img[pressed=true]{
+  transform: scale(1.02);
+  border:2px solid white;
+  box-shadow:2px 2px 5px red;
+}
+/* new26 */
+
+.picture-view{
+  border:1px solid black;
+  height: 350px;
+  margin: 5px;
+  padding:5px;
+  display:flex;
+}
+
+.picture-view > div/*jo immediate div hai*/
+{
+  height: 100%;
+}
+
+.picture-view .move-left{
+  width:15%;
+}
+
+.picture-view .picture-main{
+  width:70%;
+  padding:5px;
+  display: flex;
+  height:97%;
+}
+
+.picture-view .picture-main img
+{
+  height:100%;
+  /* jo yae % hai wo, define karta hai ".picture-view .picture-main img" kis div mae hai uska 70% leta hai*/
+}
+
+.picture-view .move-right{
+  width:15%;
+}
+
+/* new24 */

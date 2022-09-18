@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <title>My First Frontend Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!--1)url of API for integrating  real icons, yae google nae bana kae dae rakhi hai 2)esae apane css kae upar add karengae -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!--Buttons etc -->
+    <div id="header">   
+      <!-- <h1>This is the Header</h1> -->
+      <button id="addFolder">Add Folder</button>
+      <button id="addTextFile">Add Text File</button>
+      <button id="addAlbum">Add Album</button> <!--new4-->
+    </div>
+
+
+
+    <!-- To show where we are -->
+    <div id="breadcrumb">
+      <!-- <h1>This is the breadcrumb</h1> -->
+      <a purpose="path" rid="-1">Root</a> <!--1)Anchor tag use isliyae kartae hai taki pointer lae jayae toh hand ban kae aa jayae,aur generaly esmae href="" some address pass kartae hai 2)rid=-1,because root pae sare folder ka pid=-1 hai 3)yae wala anchor hamesa breadcrumb mae rahega       -->   
+
+    </div>
+
+
+
+
+    <!--to show all files and folders  -->
+    <div id="container">
+      <!-- <h1>This is the container</h1> -->
+    </div>
+
+
+
+
+    <!-- area where app will show itself on a popup -->
+    <div id="app">
+      <!-- <h1>This is the area where app will show itself on a popup</h1>    -->
+      
+      <div id="app-title-bar">
+        <div id="app-title">Title will come here</div>
+        <div id="win-actions">
+          <!--,from website eska code layae hai-->
+          <div id="mini"><!-- yae sab div hum styling kae liye lagayae hai sirf -->
+            <span class="material-icons">minimize</span>
+          </div>
+          <div id="full">
+            <span class="material-icons">fullscreen</span>
+          </div>
+          <div id="clo">
+            <span id="app-close" class="material-icons">close</span>    
+          </div>
+        </div>
+      </div>
+      <div id="app-menu-bar"></div>
+      <div id="app-body"></div>
+      
+    </div>
+
+
+
+
+    <!-- used as blueprint -->
+    <template id="templates">
+      <!--rid=>resource id,pid=>parent id-->
+      <div class="folder" rid="" pid="">  
+        <span action="rename">rename</span>
+        <span action="delete">delete</span>
+        <span action="view">view</span>
+        <div purpose="name"></div>
+      </div>
+
+      <a purpose="path" rid="-1"></a>   
+
+      <div class="text-file" rid="" pid="">  
+        <span action="rename">rename</span>
+        <span action="delete">delete</span>
+        <span action="view">view</span>
+        <div purpose="name"></div>
+      </div>
+
+      <!-- new7 -->
+      <div class="album" rid="" pid="">  
+        <span action="rename">rename</span>
+        <span action="delete">delete</span>
+        <span action="view">view</span>
+        <div purpose="name"></div>
+      </div>
+      <!-- new7 -->
+      
+      <div purpose="notepad-menu" class="notepad-menu">
+        <!-- <p>I am the notepad's menu</p> -->
+        
+        <span action="save" class="material-icons">save</span>         <!-- from website eska code layae hai --> 
+        <span pressed="false" action="bold" class="material-icons">format_bold</span> <!-- from website eska code layae hai -->
+        <span pressed="false" action="italic" class="material-icons">format_italic</span> <!-- from website eska code layae hai -->
+        <span pressed="false" action="underline" class="material-icons">format_underlined</span> <!-- from website eska code layae hai -->
+
+        <input type="color" action="bg-color" />
+        <input type="color" action="fg-color" />
+
+        <select action="font-family">
+          <option value="monospace">monospace</option>
+          <option value="serif">serif</option>
+          <option value="sans-serif">sans-serif</option>
+          <option value="cursive">cursive</option>
+        </select>
+
+        <select action="font-size">
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
+          <option value="18">18</option>
+          <option value="20">20</option>
+          <option value="22">22</option>
+        </select>
+        
+        <span action="download" class="material-icons">download</span>
+        <span action="forupload" class="material-icons">upload</span>      <!--new1-->
+        <input action="upload" type="file" />
+       
+        <!--  
+        <a href="http:\\www.google.com" target="_blank">Link</a>  //target="_blank" :- It means new window mae open hoga, nahi denae pae usi window mae open ho jaega  
+        --><a purpose="download" href="http://www.google.com">Link</a>
+          <!--href kae andar agar hum json dal denge to wo download ho ga agar hum link pae click karengae toh-->
+
+      </div>
+      <div purpose="notepad-body" class="notepad-body">
+        <textarea>I am the notepad's body</textarea>
+      </div>
+      
+      <!-- new18 -->
+      <div purpose="album-menu" class="album-menu">
+      <!-- new21 -->
+        <span action="save" class="material-icons">save</span>
+        <span action="download" class="material-icons">download</span>
+        <span action="upload" class="material-icons">upload</span>
+        <span action="add" class="material-icons">add</span>
+        <span action="remove" class="material-icons">delete</span>
+        
+        <span action="play" class="material-icons">play_arrow</span>
+        <span action="pause" class="material-icons">pause</span>
+      <!-- new21 -->
+      </div>
+      <div purpose="album-body" class="album-body">
+      <!-- new23 -->
+        <div class="picture-list">
+          <!-- new25, random image dal kae yae sab set kar rahae hai,new25 mae 2pic dalae thae -->
+          <!-- new25 -->
+        </div>
+        <div class="picture-view">
+          
+            
+          <div class="picture-main">
+            <img src="" alt="Please select an image" /><!--alt="",alt tab kam aata hai jab src="",blank hota hai-->
+          </div>
+          
+            
+        </div>
+      <!-- new23 -->
+      </div>
+      <!-- new18 -->
+
+
+    </template>
+
+
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
